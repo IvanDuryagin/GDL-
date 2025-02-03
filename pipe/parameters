@@ -1,0 +1,80 @@
+VALUES "configuration" 		`ППРС ø`, `ПНД ПЭ100 ø`, `ПНД ПЭ100 PE-RT ø`, `PEX-A ø` 
+VALUES "visualisation" 		`Детальный`, `Схематичный`
+
+
+lock "naimen"
+
+values "gamma"			range [0,360]
+values "B" 				0.016, 0.020, 0.025, 0.032, 0.040, 0.050, 0.063, 0.075, 0.090, 0.110, 0.160
+values "A"				range (0,]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	!! Length on the Center
+	parameters	zzyzx	= A*sin(gamma),
+				dist_x	= A*cos(gamma),
+				dist_y	= 0
+
+	lock "zzyzx","dist_x","dist_y"
+
+parameters ac_bottomlevel 	= 0
+parameters ac_toplevel 	= ZZYZX
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+	if B = 0.016 then
+		parameters naimen = "Труба " + configuration + " 16 " + name1
+		else
+
+		if B = 0.020 then
+			parameters naimen = "Труба " + configuration + " 20 " + name1
+			else
+
+			if B = 0.025 then
+				parameters naimen = "Труба " + configuration + " 25 " + name1
+				else
+	
+				if B = 0.032 then
+					parameters naimen = "Труба " + configuration + " 32 " + name1
+					else
+
+					if B = 0.040 then
+						parameters naimen = "Труба " + configuration + " 40 " + name1
+						else
+
+						if B = 0.050 then
+							parameters naimen = "Труба " + configuration + " 50 " + name1
+							else
+
+							if B = 0.063 then
+								parameters naimen = "Труба " + configuration + " 63 " + name1
+								else
+
+								if B = 0.075 then
+									parameters naimen = "Труба " + configuration + " 75 " + name1
+									else
+
+									if B = 0.090 then
+										parameters naimen = "Труба " + configuration + " 90 " + name1
+										else
+			
+										if B = 0.110 then
+											parameters naimen = "Труба " + configuration + " 110 " + name1
+											else
+
+											if B = 0.160 then
+												parameters naimen = "Труба " + configuration + " 160 " + name1
+
+
+											endif
+										endif	
+									endif
+								endif
+							endif	
+						endif
+					endif
+				endif	
+			endif
+		endif
+	endif	
