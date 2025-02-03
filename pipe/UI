@@ -1,0 +1,38 @@
+UI_OUTFIELD "Наименование в спецификации", 0, 0
+UI_INFIELD "naimen", 0, 20, 300, 20
+
+UI_OUTFIELD "Наш сайт", 0, 250
+UI_BUTTON UI_LINK, "ООО Проектная мастерская АрхКуб", 100, 250, 200, 20, 0,
+"https://www.archqb.ru/"
+
+UI_OUTFIELD "Длина", 0, 150
+UI_INFIELD "A", 100, 150, 100, 20
+
+UI_OUTFIELD "Детализация", 350, 150
+UI_INFIELD "gs_resol", 450, 150, 100, 20
+
+UI_OUTFIELD "Материал", 0, 100
+UI_RADIOBUTTON "configuration", `ППРС ø`, `ППРС`, 100, 100, 100, 20
+UI_RADIOBUTTON "configuration", `ПНД ПЭ100 ø`, `ПНД ПЭ100`, 100, 120, 100, 20
+UI_RADIOBUTTON "configuration", `ПНД ПЭ100 PE-RT ø`, `PE-RT`, 200, 120, 100, 20
+UI_RADIOBUTTON "configuration", `PEX-A ø`, `PEX-A`, 200, 100, 100, 20
+
+UI_OUTFIELD "Угол", 0, 200
+UI_INFIELD "gamma", 100, 200, 100, 20
+
+UI_OUTFIELD "Диаметр", 0, 50
+UI_INFIELD "B", 100, 50, 100, 20
+
+UI_OUTFIELD "Примечание", 350, 0
+UI_INFIELD "name1", 350, 20, 300, 20
+
+UI_OUTFIELD "Отображение", 350, 50
+UI_RADIOBUTTON "visualisation", `Детальный`, `Детальный`, 450, 50, 150, 20
+UI_RADIOBUTTON "visualisation", `Схематичный`, `Схематичный`, 450, 70, 150, 20
+
+UI_OUTFIELD "Тип линии", 350, 100
+UI_INFIELD "t_line", 450, 100, 120, 20
+
+UI_OUTFIELD "Задать вопрос", 350, 250
+UI_BUTTON UI_LINK, "mail@archqb.ru", 450, 250, 120, 20, 0,
+"mailto:mail@archqb.ru"
