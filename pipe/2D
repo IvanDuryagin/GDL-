@@ -1,0 +1,136 @@
+
+unID	= 1
+hLineID	= 1000
+
+hotspot2 0,	0,	unID : unID = unID + 1
+
+
+	rot2 beta
+
+	plan_A = sqr(dist_x^2+dist_y^2)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	if abs(gamma) = 90 then
+			hotspot2 0,						0
+			else
+			if gamma > 90 & gamma < 270 then
+				hotspot2 0,						0, 	unID,	A,	1, A
+				hotspot2 -plan_A,				0,	unID,	A,	2, A
+				else
+				hotspot2 0,						0, 	unID,	A,	1, A
+				hotspot2 plan_A,				0,	unID,	A,	2, A
+			endif
+	endif
+
+	del 1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	
+	if visualisation = `Схематичный` & gamma < 90 then
+
+		line_type t_line
+		line2 0,0,dist_x,0
+		hotline2 0,0,plan_A,0
+		else
+
+
+		if visualisation = `Схематичный` & gamma = 90 then
+
+			CIRCLE2 		0, 0, B/2
+			HOTARC2 		0, 0, B/2, 0, 360
+			else
+
+
+			if visualisation = `Схематичный` & gamma > 90 and gamma < 270 then
+
+				line_type t_line
+				line2 0,0,dist_x,0
+				hotline2 0,0,-plan_A,0
+				else
+
+
+				if visualisation = `Схематичный` & gamma = 270 then
+	
+					CIRCLE2 		0, 0, B/2
+					HOTARC2 		0, 0, B/2, 0, 360
+					else
+
+						
+					if visualisation = `Схематичный` & gamma > 270 then
+
+						line_type t_line
+						line2 0,0,dist_x,0
+						hotline2 0,0,plan_A,0
+						else
+
+	
+						if visualisation = `Детальный` & gamma < 90 then
+
+							project2{3} 	3, 270, 3 + 32, 1 + 4, 
+											1,
+											0, 0, 90
+							project2{3} 	3, 270, 2 + 32, 2 + 8, 
+											1, 
+											0, 0, 90
+							hotline2 		0,0,plan_A,0
+							else
+
+
+							if visualisation = `Детальный` & gamma = 90 then
+
+								project2{3} 	3, 270, 3 + 32, 1 + 4, 
+												1,
+												0, 0, 90
+								project2{3} 	3, 270, 2 + 32, 2 + 8, 
+												1, 
+												0, 0, 90
+								HOTARC2 		0, 0, B/2, 0, 360
+								else
+
+
+								if visualisation = `Детальный` & gamma > 90 and gamma < 270 then
+
+									project2{3} 	3, 270, 3 + 32, 1 + 4, 
+													1,
+													0, 0, 90
+									project2{3} 	3, 270, 2 + 32, 2 + 8, 
+													1, 
+													0, 0, 90
+									hotline2 		0,0,-plan_A,0
+									else
+
+
+									if visualisation = `Детальный` & gamma = 270 then
+
+										project2{3} 	3, 270, 3 + 32, 1 + 4, 
+														1,
+														0, 0, 90
+										project2{3} 	3, 270, 2 + 32, 2 + 8, 
+														1, 
+														0, 0, 90
+										HOTARC2 		0, 0, B/2, 0, 360
+										else
+												
+
+										if visualisation = `Детальный` & gamma > 270 then
+
+											project2{3} 	3, 270, 3 + 32, 1 + 4, 
+															1,
+															0, 0, 90
+											project2{3} 	3, 270, 2 + 32, 2 + 8, 
+															1, 
+															0, 0, 90
+											hotline2 		0,0,plan_A,0
+
+
+										endif
+									endif
+								endif
+							endif
+						endif
+					endif
+				endif
+			endif
+		endif
+	endif
