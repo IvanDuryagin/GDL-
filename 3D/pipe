@@ -1,0 +1,35 @@
+resol gs_resol
+
+unID = 1
+hotspot 0,0,0,unID : unID = unID+1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	hotspot 0,0,0,unID,gamma,6 : unID=unID+1
+	hotspot 1,0,0,unID,gamma,4+128 : unID=unID+1
+	hotspot 0,-1,0,unID,gamma,7 : unID=unID+1
+	hotspot A/2*cos(gamma),0,A/2*sin(gamma),unID,gamma,5 : unID=unID+1
+
+	roty 90-gamma
+	hotspot 0,0,0,unID,A,1+256 : unID=unID+1
+	hotspot 0,0,-1,unID,A,3 : unID=unID+1
+	hotspot 0,0,A,unID,A,2 : unID=unID+1
+	del 1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+	rotz beta
+	roty 90-gamma
+
+GROUP "Dn"
+cone A,B/2,B/2,90,90
+ENDGROUP
+
+GROUP "Du"
+cone A,B/2-0.005,B/2-0.005,90,90
+ENDGROUP
+
+result1 = SUBGROUP("Dn","Du")
+PLACEGROUP result1
+
+END
